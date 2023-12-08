@@ -1,0 +1,123 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #3D3D3D;
+    color: white;
+    font-size: 17px;
+}
+
+h1 {
+    font-size: 25px;
+    font-weight: normal;
+    color: #ffe8d3;
+    letter-spacing: 0.1em;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: normal;
+    color: #ffe8d3;
+    letter-spacing: 0.2em;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 75vh;
+    width: 75%;
+    margin: auto;
+    border: solid white;
+    padding: 10px;
+    overflow: scroll;
+	overflow: hidden;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.top {
+    margin: auto;
+    width: 90%;
+    text-align: center;
+    border-bottom: solid white;
+}
+
+.authorsnote {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    text-align: justify;
+    border: dashed white;
+    padding: 10px;
+}
+
+.main {
+    padding: 10px;
+    max-width: 90%;
+    display: inline;
+    overflow-y: scroll;
+}
+
+.main::-webkit-scrollbar {
+	display: none;
+}
+
+
+.essay p {
+    text-indent: 30px;
+    line-height: 2;
+}
+
+.footnotes {
+    border-top: dashed white;
+}
+.footnotes li {
+    text-indent: 30px;
+    line-height: 2;
+}
+
+figure img {
+    margin: auto;
+    display: block;
+    max-width: 75%;
+}
+
+figure figcaption {
+    text-align: center;
+    line-height: 2;
+}
+
+.figures {
+    display: flex;
+    flex-basis: 1;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#figuresheader {
+    border-top: dashed white;
+    text-align: center;
+}
+
+a:link,
+a:visited {
+    color: #D3EAFF;
+    text-decoration: none;
+}
+
+pre code {
+    background-color: #eee;
+    border: 1px solid #999;
+    display: block;
+    padding: 20px;
+    color: black;
+  }
+
+.codeblock {
+    display: inline;
+}
