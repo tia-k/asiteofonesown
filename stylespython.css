@@ -68,6 +68,14 @@ a:visited {
     text-decoration: none;
 }
 
+.footnotes {
+    border-top: dashed white;
+}
+.footnotes li {
+    text-indent: 30px;
+    line-height: 2;
+}
+
 pre {
     width: 100%;
 }
