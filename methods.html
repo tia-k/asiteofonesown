@@ -20,21 +20,26 @@
                     <h2>methodology and ethos.</h2>
                     <p>
                         My central hypothesis for this piece is that Arthur Conan Doyle's Sherlock Holmes series was, as a whole, remarkably consistent. "Formulaic" is often used negatively, but when I describe the series as "formulaic" here, I mean that Doyle developed a semantic and structural formula and applied it across the series, both in the full-length novels and the short stories. To test this hypothesis computationally, I have undertaken four main methods, which deserve brief explanations.</p>
-                    <p><b>1. Type-Token Analysis</b><br>
+                    <h3>1. Type-Token Analysis</h3>
+                    <p>
                         Type-token analysis refers to an attempt to measure the lexical variety of a text by comparing the number of unique words it contains (types) to the total amount of words it contains (tokens). The type-token ratio, abbreviated as TTR in the main body of this analysis, is the ratio of this number of types to the number of tokens. I have elected to represent this as a number between zero and one, calculated by dividing the number of types and number of tokens. This TTR value can act as a proxy for lexical variety: a text where every word is different will have a TTR of one; one consisting of repetition of a single one would have a TTR of zero. Thus, by working out the ratio of types to tokens in each of the texts in Doyle's Sherlock Holmes canon, we can grasp the level of lexical variation in each text and how this alters throughout the series.</p>
-                    <p><b>2. Sentiment Analysis</b><br>
+                    <h3>2. Sentiment Analysis</h3>
+                    <p>
                         As far as I am applying the term "sentiment analysis" here, it refers to how 'positive' or 'negative' the language of a text or section of a text is. I have performed this using the Python version of the open-source <a href="https://github.com/cjhutto/vaderSentiment">VADER sentiment analysis tool</a>. VADER's database consists of individual words, rated as positive or negative on a scale from -4 to +4, as gathered through crowdsourcing. The sentiment analyser tool can apply these ratings to each word in a sentence and ultimately calculate a 'normalized, weighted, composite score' for the positive or negative sentiment of a pre-determined section on a scale of -1 (the most negative) to +1 (the most positive).<a href="#footnote_one"><span id="footnote_one_indic">[1]</span></a> In my code, I have elected to do this analysis for each complete sentence in a text, and then take averages for each five-per cent of the text, in order to get a sense of how sentiment develops across texts.
                     </p>
-                    <p><b>3. Networks</b><br>
+                    <h3>3. Networks</h3>
+                    <p>
                         The networks in this analysis' main body have been manually created by myself. Each character (node) is represented as having a connection (edge) to another character whenever there is an explicit exchange of dialogue, represented, recalled, or reported. This data, stored in CSVs, has been put into Stanford's <a href="https://hdlab.stanford.edu/palladio/">Palladio</a> tool to visualise connections. It has also been run through <a href="https://networknavigator.jrladd.com/">Network Navigator</a> to gain access to numerical data about the networks.
                     </p>
                     <p>
                         It is essential to acknowledge that all of the data is subject to the oversights of one individual and that I have not created networks for every single text in the Sherlock Holmes series. To get this project out promptly, I only created network data for the first five chapters of the first and last novels in the series and the first short story of each of the five short story collections.
                     </p>
-                    <p><b>4. Natural Language Processing and Parts-of-Speech</b>
+                    <h3>4. Natural Language Processing and Parts-of-Speech</h3>
+                    <p>
                         In computing, Natural Language Processing refers to the processing of language by computers as humans might do; in practice, it often refers to recognising parts of speech such as verbs, nouns, and proper names. For my computational reading, this recognition is the key reason I have used the freely available tool <a href="https://spacy.io/">spaCy</a>. Using spaCy, I processed each text to gather the words associated with different parts of speech, which I then used other Python modules to count. This data's significance should become evident in the complete analysis.
                     </p>
-                    <p><b>The Overall Ethos</b>
+                    <h3>The Overall Ethos</h3>
+                    <p>
                         In making this website, I want to make my methods as clear and easy to replicate as possible. The scripts for processing texts will be displayed alongside explanations on another page. While the text data will not be fully displayed here, I will openly state that the raw text for my Sherlock Holmes corpus is from the ever-useful Project Gutenberg. In working with this data, I have cleaned it and my own produced data to some degree, but I fully acknowledge that my data has not been perfectly cleaned, mainly to get this project out on time. Nonetheless, I hope my data is clean enough and my code well explained enough that the vision for this project is apparent, even if I have yet to achieve it perfectly on my own.  
                     </p>
                 </div>
