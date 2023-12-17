@@ -15,7 +15,42 @@
             <div class="main">
                 <div class="essay">
                     <div class="codeblock">
-                        <h2>code title!</h2>
+                        <h2>Type-Token Ratio</h2>
+                        <p>The full code can be found <a href="https://github.com/tia-k/asiteofonesown/blob/af3e0a50129b996f49e9230180728f424ecd555b/code/01A_type_token_analysis.ipynb">here</a> and <a href="https://github.com/tia-k/asiteofonesown/blob/af3e0a50129b996f49e9230180728f424ecd555b/code/01B_type_token_analysis.ipynb">here</a>.</p>
+                        <p>A little description of what the code does!</p>
+                        <pre><code># Creating a function to do the type-token analysis for each text
+def type_token(filepath, title):
+    with open(f'{filepath}', encoding='utf8') as f: # Opens the .txt file as variable f
+        full_passage = f.read() # Reads the .txt file into a string and then closes the file
+    full_passage = full_passage.replace('\n', ' ') # Replaces new-line symbols with spaces
+    full_passage = full_passage.split() # Splits this string into a list of words
+    tokens = len(full_passage) # Counts the amount of words in the list of all the document's words - this is the number of 'tokens' in the document
+    passage = [word for word in full_passage if word not in stopwords] # Makes a list of words with the stopwords removed (adds all the passage's words to a new list unless they are stopwords)
+
+    unique_terms = [passage[0]] # Creates a list of unique terms, starting with the passage's first non-stopword word
+    for word in passage: # For each word in the passage...
+        if word not in unique_terms: # If it hasn't already been recorded as a unique word...
+            unique_terms.append(word) # This adds the word to the list of unique words
+    types = len(unique_terms) # Counts the amount of words in the list of the document's unique words - this is the number of 'types'
+    ttr = round(types/tokens, 5) # Calculates the type-token ratio (number of types divided by number of tokens) and rounds this to five decimal places
+    passage_date = title[0:4] # Creates a value for the document's year (the first four characters of the file's name)
+    passage_month = title[5:7] # Creates a value for the document's month (the fifth and sixth characters of the file's name)
+    if passage_month[0] == '0': # If the document's month has a trailing zero
+        passage_month.replace('0', '') # This removes it
+    passage_month_n = int(passage_month) # And this converts it to an integer to do some maths
+    passage_month_n = passage_month_n - 1 # And this subtracts one for the purpose of some maths
+
+    # The following maths works by estimating one month into the year being 0.08333, so, if the year is 2023, January is 2023.000000 (so the month needs 1 subtracted), February is 2023.08333 and so on; the purpose of all this is to make visualisations in Excel easier
+    passage_month_calc = round(passage_month_n * 0.08333, 5) # Multiplies the month by 0.08333
+    passage_month = str(passage_month_calc) # Converts this float value back to a string
+    passage_month = passage_month[1:] # Removes the starting zero
+    passage_date = passage_date + passage_month # Adds this decimal onto the end of the year string
+    document_type_token = {'text': title, 'date': passage_date, 'TTR': ttr, 'types': types,'tokens': tokens} # Creates a dictionary containing the document's title, number of types, number of tokens, and type-token ratio (TTR)
+    return document_type_token # Returns this list to be used by the wider loop</code></pre>
+                    </div>
+                    <div class="codeblock">
+                        <h2>Sentiment Analysis</h2>
+                        <p>The full code can be found <a href="https://github.com/tia-k/asiteofonesown/blob/af3e0a50129b996f49e9230180728f424ecd555b/code/02_sentiment_analysis.ipynb">here</a>.</p>
                         <p>A little description of what the code does!</p>
                         <pre>
                             <code>
@@ -30,7 +65,8 @@ body {
                         </pre>
                     </div>
                     <div class="codeblock">
-                        <h2>code title!</h2>
+                        <h2>Natural Language Processing</h2>
+                        <p>The full code can be found <a href="https://github.com/tia-k/asiteofonesown/blob/af3e0a50129b996f49e9230180728f424ecd555b/code/03_natural_language_processing.ipynb">here</a>.</p>
                         <p>A little description of what the code does!</p>
                         <pre>
                             <code>
