@@ -53,14 +53,34 @@ def type_token(filepath, title):
                         <p>The full code can be found <a href="https://github.com/tia-k/asiteofonesown/blob/af3e0a50129b996f49e9230180728f424ecd555b/code/02_sentiment_analysis.ipynb">here</a>.</p>
                         <p>A little description of what the code does!</p>
                         <pre>
-                            <code>
-p {
-    color: red;
-    }
+                            <code># Creating a function to do the sentiment analysis for each 5% of the text
+def find_sentiment(filepath,title):
+    with open(f'{filepath}', encoding='utf8') as f: # Opens the .txt file as variable f
+        text = f.read() # Reads the .txt file into a string and then closes the file
+    text = text.replace('\n', ' ') # Replaces new-line symbols with spaces
+    text_sentences = nltk.sent_tokenize(text) # Splits the text up into a list of sentences using a NLTK (Natural Language Toolkit) method
+    
+    no_sentences = len(text_sentences) # Finds the number of sentences by getting the length of the list of sentences
+    start_pos = 0 # Creates a starting position for sentence number, beginning at zero (counting starts at zero in Python)
+    five_percent = round(no_sentences/20) # Calculates how many sentences are equivalent to five percent of the whole document
 
-body {
-    background-color: #fff;
-    }
+    section_scores = {'text':f'{title}',} # Creates an empty dictionary which will go on to contain the sentiment score for each five percent, and records the document's name as its first key/value pair
+
+    for i in range(1, 21): # For each five percent...
+        total_scores = [] # This makes an empty list which will store the scores for each sentence
+        for sentence in text_sentences[start_pos:start_pos+five_percent]: # For every sentence in this five percent...
+            scores = sentimentAnalyser.polarity_scores(sentence) # This works out its scores
+            total_scores.append(scores['compound']) #This adds its overall score to the list of scores
+        
+        if len(total_scores) != 0: # If there are sentences in the list of scores for this five percent...
+            scores_count = mean(total_scores) # This works out the average of this scores and stores it
+        else: # If there aren't...
+            scores_count = 0 # This sets the overall score for that section to zero
+
+        section_scores[i*5] = float(scores_count) # Makes a new key/value pair in the dictionary, with the key of which percent it is, and the average sentiment value
+        start_pos += five_percent # Increases the starting position to after this five percent, so we work with the next five percent of the document
+
+    return section_scores # Returns the dictionary of a document's sentiment scores
                             </code>
                         </pre>
                     </div>
@@ -69,14 +89,42 @@ body {
                         <p>The full code can be found <a href="https://github.com/tia-k/asiteofonesown/blob/af3e0a50129b996f49e9230180728f424ecd555b/code/03_natural_language_processing.ipynb">here</a>.</p>
                         <p>A little description of what the code does!</p>
                         <pre>
-                            <code>
-p {
-    color: red;
-    }
+                            <code># Creating a function for working out the most common adjectives, nouns, pronouns and verbs in each text
+def top_speech_parts(filepath):
+    with open(filepath, encoding="utf-8") as f: # Opens the .txt file (document) as variable f
+        document = nlp(f.read().lower()) # Reads the .txt file into the 'document' variable, applies NLP to it and then closes the file
+    adjs = [] # Creates an empty list that will store the adjective data
+    nouns = [] # Creates an empty list that will store the noun data
+    pronouns = [] # Creates an empty list that will store the pronoun data
+    verbs = [] # Creates an empty list that will store the verb data
+    
+    for token in document: # For every word in the document...
+        if token.pos_ == 'ADJ': # If it is an adjective...
+            adjs.append(token.text) # Record it to the adjective list
+        elif token.pos_ == 'NOUN': # If it is a noun...
+            nouns.append(token.text) # Record it to the noun list
+        elif token.pos_ == 'PRON': # If it is a pronoun...
+            pronouns.append(token.text) # Record it to the pronoun list
+        elif token.pos_ == 'VERB': # If it is a verb...
+            verbs.append(token.text) # Record it to the verb list
+        else: # If it is not any of these...
+            pass # Go on to the next word
+    
+    tokens = make_tokens(document) # Stores the value of what the make_tokens function created below returns
 
-body {
-    background-color: #fff;
-    }
+    adjs_tally = Counter(adjs) # Counts how many times each adjective is used in a tuple with the word and its number of incidences
+    adjs_tally = adjs_tally.most_common() # Reorders this data from most common to least common
+
+    nouns_tally = Counter(nouns) # Counts how many times each noun is used in a tuple with the word and its number of incidences
+    nouns_tally = nouns_tally.most_common() # Reorders this data from most common to least common
+
+    pronouns_tally = Counter(pronouns) # Counts how many times each pronoun is used in a tuple with the word and its number of incidences
+    pronouns_tally = pronouns_tally.most_common() # Reorders this data from most common to least common
+
+    verbs_tally = Counter(verbs) # Counts how many times each verb is used in a tuple with the word and its number of incidences
+    verbs_tally = verbs_tally.most_common() # Reorders this data from most common to least common
+    
+    return adjs_tally, nouns_tally, pronouns_tally, verbs_tally, tokens # Returns the tallies of adjectives, nouns, pronouns and verbs, and the list of tokens in the text and their part-of-speech
                             </code>
                         </pre>
                     </div>
