@@ -22,21 +22,41 @@
                     <h3>Type-Token Ratio</h3>
                     <p>In layperson's terms, the type-token ratio (TTR) of a text is the ratio of unique words to total words. In practice, it can act as a rough measure for the level of lexical variation in a text. Here, it has been calculated as a value between one and zero, with one being the most possible lexical variation and zero being the lowest possible lexical variation. With that in mind, this is the rough progression of lexical variation across the Sherlock Holmes series. </p>
                     <figure>
-                        <img src="figures/fig01.png" title="A line graph depicting the type-token ratio of texts in the Sherlock Holmes canon from 1887 to 1927." height="250" width="500"/>
+                        <img src="figures/fig01.png" title="A line graph depicting the type-token ratio of texts in the Sherlock Holmes canon from 1887 to 1927." height="272" width="500"/>
                         <figcaption>Figure 1. A line graph depicting the type-token ratio of texts in the Sherlock Holmes canon from 1887 to 1927.</figcaption>
                     </figure>
                     <p>This visualisation alone reveals a very varied picture with little to infer. However, we get a different picture when we separate the novels and the short story collections.</p>
                     <figure>
-                        <img src="figures/fig02.png" title="A line graph depicting the type-token ratio of the Sherlock Holmes novels from 1887 to 1915." height="250" width="500"/>
+                        <img src="figures/fig02.png" title="A line graph depicting the type-token ratio of the Sherlock Holmes novels from 1887 to 1915." height="278" width="500"/>
                         <figcaption>Figure 2. A line graph depicting the type-token ratio of the Sherlock Holmes novels from 1887 to 1915.</figcaption>
                     </figure>
                     <figure>
-                        <img src="figures/fig03.png" title="A line graph depicting the type-token ratio of the Sherlock Holmes short story collections from 1892 to 1927." height="250" width="500"/>
+                        <img src="figures/fig03.png" title="A line graph depicting the type-token ratio of the Sherlock Holmes short story collections from 1892 to 1927." height="284" width="500"/>
                         <figcaption>Figure 3. A line graph depicting the type-token ratio of the Sherlock Holmes short story collections from 1892 to 1927.</figcaption>
                     </figure>
-                    <p>These visualisations are more sensical. Beginning with the novels, we see a downward trend from a higher TTR to a lower TTR, suggesting that lexical variation decreased as the series progressed. This may imply that, as the series developed, Doyle developed a stronger idea of the series' semantic field and, thus, used less varied language. While this does not support our hypothesis entirely, it does seem to affirm that Doyle created a formula that he then proceeded to use. The high TTR of the earliest novels can be viewed as Doyle experimenting, whereas the lower TTR of the final two novels can be seen as Doyle honing down on the formula for a Holmes novel.
-                        The short stories collections also have a trend but in the opposite direction. Their TTR increases as time progresses, suggesting that Doyle's lexical variation increases over the series. This seems to suggest the inverse of the graph representing the novels. Doyle seems to experiment with the semantic field of the series over time. However, when we look closely at both graphs, we see the TTR (on average) converge around 1915, when the last Holmes novel was published. Thus, while it may seem that the short story collections become more experimental as a whole, they seem to converge in terms of lexical variation as Doyle got further into writing the series, suggesting that Doyle's level of experimentation was something he was able to apply equally to both the short stories and the novels when he had more experience with the series. Thus, our hypothesis seems to be relatively congruent with the TTR values for the texts.
+                    <p>These visualisations are more sensical. Beginning with the novels, we see a downward trend from a higher TTR to a lower TTR, suggesting that lexical variation decreased as the series progressed. This may imply that, as the series developed, Doyle developed a stronger idea of the series' semantic field and, thus, used less varied language. While this does not support our hypothesis entirely, it does seem to affirm that Doyle created a formula that he then proceeded to use. The high TTR of the earliest novels can be viewed as Doyle experimenting, whereas the lower TTR of the final two novels can be seen as Doyle honing down on the formula for a Holmes novel.</p>
+                    <p>The short stories collections also have a trend but in the opposite direction. Their TTR increases as time progresses, suggesting that Doyle's lexical variation increases over the series. This seems to suggest the inverse of the graph representing the novels. Doyle seems to experiment with the semantic field of the series over time. However, when we look closely at both graphs, we see the TTR (on average) converge around 1915, when the last Holmes novel was published. Thus, while it may seem that the short story collections become more experimental as a whole, they seem to converge in terms of lexical variation as Doyle got further into writing the series, suggesting that Doyle's level of experimentation was something he was able to apply equally to both the short stories and the novels when he had more experience with the series. Thus, our hypothesis seems to be relatively congruent with the TTR values for the texts.
                     </p>
+                    <h3>Sentiment Analysis</h3>
+                    <p>Another set of data points about the texts that seems to agree with our hypothesis is the development of sentiment (in the sense of positive versus negative language) across the texts or, more specifically, novels. Due to the sheer amount of them, I have been unable to run sentiment analysis on the short stories. I elected not to do so for the collected short stories, as, unlike the novels, they do not intend to form one coherent narrative.</p>
+                    <p>From the novels alone, however, we get the sense that Doyle developed, to some degree, a formula of sentiment.</p>
+                    <figure>
+                        <img src="figures/fig04.png" title="A line graph depicting sentiment across A Study in Scarlet (1887)." height="419" width="500"/>
+                        <figcaption>Figure 4. A line graph depicting sentiment across <i>A Study in Scarlet</i> (1887).</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="figures/fig05.png" title="A line graph depicting sentiment across The Sign of the Four (1890)." height="418" width="500"/>
+                        <figcaption>Figure 5. A line graph depicting sentiment across <i>The Sign of the Four</i> (1890).</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="figures/fig06.png" title="A line graph depicting sentiment across The Hound of the Baskervilles (1902)." height="418" width="500"/>
+                        <figcaption>Figure 6. A line graph depicting sentiment across <i>The Hound of the Baskervilles</i> (1902).</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="figures/fig07.png" title="A line graph depicting sentiment across The Valley of Fear (1915)." height="418" width="500"/>
+                        <figcaption>Figure 7. A line graph depicting sentiment across <i>The Valley of Fear</i> (1915).</figcaption>
+                    </figure>
+                    <p>In these graphs, where sentiment (on the Y-axis) of plus one is the most positive and minus one is the most negative and is calculated on average for each five per cent of each novel, we see a move, on-trend, from positive to negative across all of the texts except from The Sign of the Four. The consistency of this trend, except for in the earlier novels, recreates what we saw in the texts' TTR values: the early series was less consistent, whereas the later series was more consistent. While the shape of sentiment varies, the overall trend is similar. Thus, we may conclude that Doyle developed a formula of moving from positive to negative language (at least, in our modern views of the English language) after writing the first two novels.</p>
                 </div>
                 <div class="footnotes">
                     <ol>
