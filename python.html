@@ -80,9 +80,7 @@ def find_sentiment(filepath,title):
         section_scores[i*5] = float(scores_count) # Makes a new key/value pair in the dictionary, with the key of which percent it is, and the average sentiment value
         start_pos += five_percent # Increases the starting position to after this five percent, so we work with the next five percent of the document
 
-    return section_scores # Returns the dictionary of a document's sentiment scores
-                            </code>
-                        </pre>
+    return section_scores # Returns the dictionary of a document's sentiment scores</code></pre>
                     </div>
                     <div class="codeblock">
                         <h2>Natural Language Processing</h2>
@@ -124,9 +122,7 @@ def top_speech_parts(filepath):
     verbs_tally = Counter(verbs) # Counts how many times each verb is used in a tuple with the word and its number of incidences
     verbs_tally = verbs_tally.most_common() # Reorders this data from most common to least common
     
-    return adjs_tally, nouns_tally, pronouns_tally, verbs_tally, tokens # Returns the tallies of adjectives, nouns, pronouns and verbs, and the list of tokens in the text and their part-of-speech
-                            </code>
-                        </pre>
+    return adjs_tally, nouns_tally, pronouns_tally, verbs_tally, tokens # Returns the tallies of adjectives, nouns, pronouns and verbs, and the list of tokens in the text and their part-of-speech</code></pre>
                     </div>
                 </div>
                 <div class="footnotes">
