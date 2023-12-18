@@ -21,9 +21,11 @@
                         <pre><code># Creating a function to do the type-token analysis for each text
 def type_token(filepath, title):
     with open(f'{filepath}', encoding='utf8') as f: # Opens the .txt file as variable f
-        full_passage = f.read() # Reads the .txt file into a string and then closes the file
+        full_passage = f.read().lower() # Reads the .txt file into a string and then closes the file
     full_passage = full_passage.replace('\n', ' ') # Replaces new-line symbols with spaces
     full_passage = full_passage.split() # Splits this string into a list of words
+    for word in full_passage: # For each word in the list of words...
+        word = clean_words(word) # This removes any remaining punctuation except for hyphens and makes it lowercase
     tokens = len(full_passage) # Counts the amount of words in the list of all the document's words - this is the number of 'tokens' in the document
     passage = [word for word in full_passage if word not in stopwords] # Makes a list of words with the stopwords removed (adds all the passage's words to a new list unless they are stopwords)
 
