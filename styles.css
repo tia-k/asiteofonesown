@@ -98,10 +98,7 @@ figure figcaption {
 }
 
 .figures {
-    display: flex;
-    flex-basis: 1;
     width: 100%;
-    flex-wrap: wrap;
     justify-content: center;
 }
 
