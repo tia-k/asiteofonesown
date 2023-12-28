@@ -18,7 +18,7 @@
                         <h2>Type-Token Ratio</h2>
                         <p>The full code can be found <a href="https://github.com/tia-k/asiteofonesown/blob/af3e0a50129b996f49e9230180728f424ecd555b/code/01A_type_token_analysis.ipynb" target="_blank">here</a> and <a href="https://github.com/tia-k/asiteofonesown/blob/af3e0a50129b996f49e9230180728f424ecd555b/code/01B_type_token_analysis.ipynb" target="_blank">here</a>.</p>
                         <p>I have provided the core function (<span class="inline-code">type_token()</span>) below.</p>
-                        <p>Modules used: <span class="inline-code">glob, pathlib, <a href="https://pandas.pydata.org/" target="_blank">pandas</a>, string, <a href="https://xlsxwriter.readthedocs.io/">xlsxwriter</a></span></p>
+                        <p>Modules used: <span class="inline-code">glob, pathlib, <a href="https://pandas.pydata.org/" target="_blank">pandas</a>, string, <a href="https://xlsxwriter.readthedocs.io/" target="_blank">xlsxwriter</a></span></p>
                         <pre><code># Creating a function to do the type-token analysis for each text
 def type_token(filepath, title):
     with open(f'{filepath}', encoding='utf8') as f: # Opens the .txt file as variable f
@@ -55,7 +55,7 @@ def type_token(filepath, title):
                         <h2>Sentiment Analysis</h2>
                         <p>The full code can be found <a href="https://github.com/tia-k/asiteofonesown/blob/af3e0a50129b996f49e9230180728f424ecd555b/code/02_sentiment_analysis.ipynb" target="_blank">here</a>.</p>
                         <p>I have provided the core function (<span class="inline-code">find_sentiment()</span>) below.</p>
-                        <p>Modules used: <span class="inline-code"><a href="https://github.com/cjhutto/vaderSentiment" target="_blank">vaderSentiment</a>, glob, pathlib, <a href="https://www.nltk.org/" target="_blank">nltk</a>, <a href="https://pandas.pydata.org/" target="_blank">pandas</a>, statistics, <a href="https://xlsxwriter.readthedocs.io/">xlsxwriter</a></span></p>
+                        <p>Modules used: <span class="inline-code"><a href="https://github.com/cjhutto/vaderSentiment" target="_blank">vaderSentiment</a>, glob, pathlib, <a href="https://www.nltk.org/" target="_blank">nltk</a>, <a href="https://pandas.pydata.org/" target="_blank">pandas</a>, statistics, <a href="https://xlsxwriter.readthedocs.io/" target="_blank">xlsxwriter</a></span></p>
                         <pre>
                             <code># Creating a function to do the sentiment analysis for each 5% of the text
 def find_sentiment(filepath,title):
@@ -90,7 +90,7 @@ def find_sentiment(filepath,title):
                         <h2>Natural Language Processing</h2>
                         <p>The full code can be found <a href="https://github.com/tia-k/asiteofonesown/blob/af3e0a50129b996f49e9230180728f424ecd555b/code/03_natural_language_processing.ipynb" target="_blank">here</a>.</p>
                         <p>I have provided the core function (<span class="inline-code">top_speech_parts()</span>) below.</p>
-                        <p>Modules used: <span class="inline-code"><a href="https://spacy.io/" target="_blank">spacy</a>, collections, <a href="https://pandas.pydata.org/" target="_blank">panda</a>, glob, pathlib</span></p>
+                        <p>Modules used: <span class="inline-code"><a href="https://spacy.io/" target="_blank">spacy</a>, collections, <a href="https://pandas.pydata.org/" target="_blank">pandas</a>, glob, pathlib</span></p>
                         <pre>
                             <code># Creating a function for working out the most common adjectives, nouns, pronouns and verbs in each text
 def top_speech_parts(filepath):
