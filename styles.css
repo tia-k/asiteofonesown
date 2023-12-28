@@ -78,6 +78,10 @@ h3 {
     line-height: 2;
 }
 
+.essay li {
+	line-height: 2;
+}
+
 .footnotes {
     border-top: dashed white;
 }
