@@ -17,21 +17,14 @@
                     <p><i>Author's note: This website runs best in Chrome on a desktop or laptop PC. The author has made every effort to ensure the site runs, but, if it fails to, a version in a word document is provided.</i></p>
                 </div>
                 <div class="essay">
-                    <h2>Methodology and Notes.</h2>
-                    <p>
-                        See below for explanations of my primary methods in this experiment, alongside notes on what I could not get to work.<br><br>
-                    </p>
-                    <h3>1. Type-Token Analysis</h3>
-                    <p>Type-token analysis refers to an attempt to measure the lexical variety of a text by comparing the number of unique words it contains (types) to the total amount of words it contains (tokens). The type-token ratio, abbreviated as TTR, the ratio of types to tokens. I have represented this as a number between zero and one, calculated by dividing the number of types by the number of tokens. This value can act as a proxy for lexical variety: a TTR of one is the most variety possible, a TTR of zero is the least variety possible. <br><br>
-                    </p>
-                    <h3>2. Sentiment Analysis</h3>
-                    <p>
-                        When I refer to "sentiment" here, it refers to how "positive" or "negative" the language of a text or section of a text is. I have performed sentiment analysis using the Python version of the open-source <a href="https://github.com/cjhutto/vaderSentiment" target="_blank">VADER sentiment analysis tool</a>. VADER's database consists of individual words, rated as positive or negative on a scale from -4 to +4, as gathered through crowdsourcing. The sentiment analyser tool can apply these ratings to each word in a sentence and calculate a 'normalized, weighted, composite score' for a pre-determined section's sentiment on a scale of -1 (the most negative) to +1 (the most positive). In my code, I have elected to do this analysis for each complete sentence in a text, and then take averages for each five-per cent of the text.<br><br>
-                    </p>
-                    <h3>3. Natural Language Processing and Parts-of-Speech</h3>
-                    <p>
-                        Here, Natural Language Processing refers to computational recognition of parts-of-speech such as verbs, nouns, and proper names. For my reading, I have used <a href="https://spacy.io/" target="_blank">spaCy</a> to recognise these parts-of-speech. Using spaCy, I processed each text to gather the words associated with different parts of speech, which I then used other Python modules to count.<br><br>
-                    </p>
+                    <h2>Methodology and Notes</h2>
+                    <h3>Notes on my methods</h3>
+                    <ul>
+                        <li>I undertook type-token analysis by repurposing the word counting code we worked on in class, and storing values to calculate the ratio of unique words to total words in the text, which I have considered here to be a proxy for overall lexical variation in a text.</li>
+                        <li>"Sentiment" in sentiment analysis here refers to how "positive" or "negative" language is according to the crowdsourced database used by the Python version of the open-source <a href="https://github.com/cjhutto/vaderSentiment" target="_blank">VADER sentiment analysis tool</a>. For my analysis, I used VADER to find 'normalized, weighted and composite score[s]' for the texts' sentences, and then worked with these scores to calculate averages for sections of the texts I also used the <a href="https://www.nltk.org/" target="_blank">Natural Language Toolkit</a> for splitting texts into sentences.<span id="foootnote_one_indic"><a href="#footnote_one">[1]</a></span></li>
+                        <li>For the natural language processing section of my analysis, I used the <a href="https://spacy.io/" target="_blank">spaCy</a> module to recognise parts of speech.</li>
+                        <li>I used <a href="https://pandas.pydata.org/" target="_blank">pandas</a> for turning data into dataframes (tables) and, in some instances, <a href="https://xlsxwriter.readthedocs.io/">xlsxwriter</a> to aid in writing data to .xlsx files.</li>
+                    </ul>
                     <h3>Unused content</h3>
                     <p>
                         Throughout my undertaking of this project, several elements went unused. The network visualisations I created were the one element I elected not to use in the body analysis. In the initial phases, I created CSVs where explicit exchanges of dialogue were listed as connections and ran this data through Stanford's <a href="https://hdlab.stanford.edu/palladio/" target="_blank">Palladio</a> tool and <a href="https://networknavigator.jrladd.com/" target="_blank">Network Navigator</a> to create visualisations and gain numerical data about characters' centrality. Ultimately, I elected not to consider these visualisations in the main analysis, as they showed the obvious: Sherlock Holmes is central to the Sherlock Holmes series. Other unused data includes the data for TTR across individual short stories; while this data was generated and visualisations made (which can be seen in Excel files, which are available upon request), I could not make much sense of this data. The other major pieces of unused data were related to NLP. Parts-of-speech graphs for all parts-of-speech I considered were made, but due to time, only the graph displaying the relative uses of each type has been considered in the main analysis. In addition, I worked with some bigram data, as can be seen in the code, but the data found there could arguably form a project of its own, so it was not used here.<br><br>
